@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "aksdevx01-3d69"
+    labels:
+        app: "aksdevx01-3d69"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 2000
+      targetPort: 2000
+      protocol: TCP
+      name: http
+    selector:
+        app: "aksdevx01-3d69"
