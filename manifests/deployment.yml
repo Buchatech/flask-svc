@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksdevx01-3d69"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksdevx01-3d69"
+  template:
+    metadata:
+      labels:
+        app: "aksdevx01-3d69"
+    spec:
+      containers:
+        - name: "aksdevx01-3d69"
+          image: "aksdevx01registry.azurecr.io/aksdevx01"
+          ports:
+          - containerPort: 2000
