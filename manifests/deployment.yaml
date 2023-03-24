@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-svc-32423-test3
+  labels:
+    app: flask-svc-32423-test3
+  namespace: flask-svc-32423-test3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-svc-32423-test3
+  template:
+    metadata:
+      labels:
+        app: flask-svc-32423-test3
+    spec:
+      containers:
+        - name: flask-svc-32423-test3
+          image: crazk8sehiebdpdv2i7fmty6.azurecr.io/flask-svc-32423-test3:latest
+          ports:
+            - containerPort: 2000
