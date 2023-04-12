@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flsk-svc-41223-run1
+  labels:
+    app: flsk-svc-41223-run1
+  namespace: flsk-svc-41223-run1-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flsk-svc-41223-run1
+  template:
+    metadata:
+      labels:
+        app: flsk-svc-41223-run1
+    spec:
+      containers:
+        - name: flsk-svc-41223-run1
+          image: jokesapiv241023run2arc.azurecr.io/flsk-svc-41223-run1:latest
+          ports:
+            - containerPort: 2000
