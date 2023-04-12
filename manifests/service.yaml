@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flsk-svc-41223-run1
+  namespace: flsk-svc-41223-run1-ns
+spec:
+  type: LoadBalancer
+  selector:
+    app: flsk-svc-41223-run1
+  ports:
+    - protocol: TCP
+      port: 2000
+      targetPort: 2000
